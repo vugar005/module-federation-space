@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/material-theme.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
+
+:root {
+    // --shell-primary-color: map-get($shell-primary-palette, 500);
+    // --shell-accent-color: map-get($shell-accent-palette, 500);
+    // --shell-warning-color: rgb(244, 67, 54);
+}

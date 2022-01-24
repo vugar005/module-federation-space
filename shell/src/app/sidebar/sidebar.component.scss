@@ -1,0 +1,18 @@
+@import 'styles/colors';
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.sidebar {
+    box-shadow: map-get($shell-box-shadow, card );
+    .nav-list {
+        padding-top: 0;
+        .nav-list-item {
+            &--active {
+                background: map-get($shell-background, dark);
+            }
+        }
+    }
+}
