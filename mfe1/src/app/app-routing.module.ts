@@ -6,8 +6,8 @@ const routes: Routes = [
   {
     path: 'mfe1',
     children: [
-       { path: '', redirectTo: 'home', pathMatch: 'full' },
-       { path: 'home', component: HomeComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
       // { path: 'b', component: BComponent },
     ],
   },
@@ -15,6 +15,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

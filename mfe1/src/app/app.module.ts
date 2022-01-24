@@ -1,4 +1,4 @@
-import { Injector, NgModule } from '@angular/core';
+import { DoBootstrap, Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,23 +7,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, HomeComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: []
+  bootstrap: [],
 })
-export class AppModule {
-  constructor(private injector: Injector) {
-  }
+export class AppModule implements DoBootstrap {
+  constructor(private injector: Injector) {}
 
   public ngDoBootstrap(): void {
-    const ce = createCustomElement(AppComponent, {injector: this.injector});
+    const ce = createCustomElement(AppComponent, { injector: this.injector });
     customElements.define('mfe1-element', ce);
     // <mfe1-element></mfe1-element>
   }

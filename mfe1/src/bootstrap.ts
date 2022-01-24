@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { enableProdMode } from '@angular/core';
 import { platformBrowser } from '@angular/platform-browser';
 import { AppModule } from './app/app.module';
@@ -18,5 +19,4 @@ if (!platform) {
   platform = platformBrowser();
   (window as any).plattform[ngVersion] = platform;
 }
-platform.bootstrapModule(AppModule)
-  .catch((err: any) => console.error(err));
+platform.bootstrapModule(AppModule).catch((err: any) => console.error(err));
