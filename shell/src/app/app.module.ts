@@ -9,8 +9,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { MainComponent } from './main/main.component';
 @NgModule({
-  declarations: [AppComponent, WrapperComponent, HeaderComponent, SidebarComponent],
+  declarations: [AppComponent, WrapperComponent, HeaderComponent, SidebarComponent, MainComponent],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, MatButtonModule, MatListModule],
   providers: [],
   bootstrap: [AppComponent],
