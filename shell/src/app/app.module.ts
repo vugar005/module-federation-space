@@ -10,20 +10,9 @@ import { MatListModule } from '@angular/material/list';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 @NgModule({
-  declarations: [
-    AppComponent,
-    WrapperComponent,
-    HeaderComponent,
-    SidebarComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    MatButtonModule,
-    MatListModule
-  ],
+  declarations: [AppComponent, WrapperComponent, HeaderComponent, SidebarComponent],
+  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, MatButtonModule, MatListModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
