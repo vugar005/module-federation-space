@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, VERSION } from '@angular/core';
 
 @Component({
   selector: 'shell-main',
@@ -6,4 +6,6 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./main.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainComponent {}
+export class MainComponent {
+  public readonly version = VERSION.full;
+}
