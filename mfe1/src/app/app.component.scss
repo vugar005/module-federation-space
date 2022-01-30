@@ -1,5 +1,8 @@
-:host {
+@import '../mfe1-global-styles.scss';
+
+.block {
     display: block;
-    padding: 10px;
-    border: 1px solid #f5f5f5;
+    width: 99%;
+    padding: 10px 15px;
+    border: 1px solid #bdc3c7;
 }

@@ -32,7 +32,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/mfe1-global-styles.scss"
             ],
             "scripts": [],
             "extraWebpackConfig": "webpack.config.js",

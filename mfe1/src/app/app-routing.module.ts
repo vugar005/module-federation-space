@@ -6,8 +6,13 @@ const routes: Routes = [
   {
     path: 'mfe1',
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: '', redirectTo: 'watchlist', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
+      {
+        path: 'watchlist',
+        loadChildren: () =>
+          import('./watchlist/watchlist.module').then((m) => m.WatchlistModule),
+      },
       // { path: 'b', component: BComponent },
     ],
   },

@@ -1,10 +1,11 @@
-import { Component, OnInit, VERSION } from '@angular/core';
+import { Component, OnInit, VERSION, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'mfe1-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
   public title = 'mfe1';

@@ -1,0 +1,20 @@
+:host {
+    display: block;
+}
+
+.watchlist-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.stock-price-table {
+    width: 100%;
+    max-width: 500px;
+    .td-green {
+        color: var(--app-green-price);
+    }
+    .td-red {
+        color: var(--app-red-price);
+    }
+}
