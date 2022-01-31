@@ -4,9 +4,11 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
 } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { combineLatest, defer, Observable, of } from 'rxjs';
 import { PollingService } from '../core/services/polling/polling.service';
 import { randomStockPriceGenerator } from '../mocks/stock-prices';
+import { selectUIWatchlist } from '../reducers';
 import { WATCHLIST_COL_DEFS } from './watchlist.constants';
 
 @Component({
@@ -17,15 +19,12 @@ import { WATCHLIST_COL_DEFS } from './watchlist.constants';
 })
 export class WatchlistComponent implements OnInit {
   public readonly columnDefs = WATCHLIST_COL_DEFS;
-  public watchList: string[] = ['SONY', 'MSFT'];
-  public dataSource = [
-    { make: 'Toyota', model: 'Celica', price: 35000 },
-    { make: 'Ford', model: 'Mondeo', price: 32000 },
-    { make: 'Porsche', model: 'Boxter', price: 72000 },
-  ];
+  public dataSource = [];
+  public watchlist?: string[];
 
   constructor(
     private pollingService: PollingService,
+    private store: Store,
     private cdr: ChangeDetectorRef
   ) {}
 
@@ -37,16 +36,26 @@ export class WatchlistComponent implements OnInit {
     this.initPollingStockData();
   }
 
-  private initPollingStockData(): void {
-    const requests: Observable<any>[] = [];
-    this.watchList.forEach((symbol) =>
-      requests.push(defer(() => of(randomStockPriceGenerator(symbol, 20))))
-    );
-    const combinedRequests = combineLatest(requests);
+  private getWatchlist(): Observable<string[]> {
+    return this.store.select(selectUIWatchlist);
+  }
 
-    this.pollingService.polling(combinedRequests, 1500).subscribe((data) => {
-      this.dataSource = data;
+  private initPollingStockData(): void {
+    this.getWatchlist().subscribe((watchlist: string[]) => {
+      this.watchlist = watchlist;
       this.cdr.detectChanges();
+      console.log(watchlist);
+
+      const requests: Observable<any>[] = [];
+      watchlist.forEach((symbol) =>
+        requests.push(defer(() => of(randomStockPriceGenerator(symbol, 20))))
+      );
+      const combinedRequests = combineLatest(requests);
+
+      this.pollingService.polling(combinedRequests, 1500).subscribe((data) => {
+        this.dataSource = data as any;
+        this.cdr.detectChanges();
+      });
     });
   }
 }
