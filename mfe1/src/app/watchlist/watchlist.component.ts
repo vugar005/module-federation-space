@@ -8,7 +8,7 @@ import { Store } from '@ngrx/store';
 import { combineLatest, defer, Observable, of } from 'rxjs';
 import { PollingService } from '../core/services/polling/polling.service';
 import { randomStockPriceGenerator } from '../mocks/stock-prices';
-import { selectUIWatchlist } from '../reducers';
+import { MFE1State, selectUIWatchlist } from '../reducers';
 import { WATCHLIST_COL_DEFS } from './watchlist.constants';
 
 @Component({
@@ -24,7 +24,7 @@ export class WatchlistComponent implements OnInit {
 
   constructor(
     private pollingService: PollingService,
-    private store: Store,
+    private store: Store<MFE1State>,
     private cdr: ChangeDetectorRef
   ) {}
 
