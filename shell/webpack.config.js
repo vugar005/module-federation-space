@@ -29,6 +29,11 @@ module.exports = {
           // Material
           "@angular/cdk": {requiredVersion: '13.1.3' },
           "@angular/material/table": {requiredVersion: '13.1.3' },
+          "@angular/material/list": {requiredVersion: '13.1.3' },
+          "@angular/material/icon": {requiredVersion: '13.1.3' },
+          "@angular/material/badge": {requiredVersion: '13.1.3' },
+          "@angular/material/menu": {requiredVersion: '13.1.3' },
+          "@angular/material/button": {requiredVersion: '13.1.3' },
         }
     }),
   ],

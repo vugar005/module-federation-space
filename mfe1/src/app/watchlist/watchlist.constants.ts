@@ -5,4 +5,5 @@ export const WATCHLIST_COL_DEFS: string[] = [
   'changePercent',
   'volume',
   'date',
+  'buy',
 ];

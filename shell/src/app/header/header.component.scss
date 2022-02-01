@@ -5,10 +5,23 @@
 }
 
 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     background: map-get($shell-primary, 500);
     padding: 8px 16px;
     h3 {
         color: map-get($shell-white, high);
     }
+
+    .header-cart {
+        color: var(--app-white);;
+        cursor: pointer;
+    }
+}
+
+.empty-cart {
+    font-size: 12px;
+    padding: 0 8px;
 }
