@@ -30,9 +30,9 @@ module.exports = {
            "rxjs": { requiredVersion: '7.4.0' },
            "rxjs/operators": { requiredVersion: '7.4.0' },
            // Material
-          "@angular/cdk": {requiredVersion: '13.1.3' },
-          "@angular/material/table": {requiredVersion: '13.1.3' },
-          "@angular/material/button": {requiredVersion: '13.1.3' },
+          "@angular/cdk": {requiredVersion: '13.2.0' },
+          "@angular/material/table": {requiredVersion: '13.2.0' },
+          "@angular/material/button": {requiredVersion: '13.2.0' },
     },
   })
   ],
