@@ -69,12 +69,11 @@
           class="td-watchlist-btn"
           mat-stroked-button
           color="warn"
-         *ngIf="watchlist?.includes(element?.symbol)"
-         (click)="removeFromWatchlist(element.symbol)"
-         >
+          *ngIf="watchlist?.includes(element?.symbol)"
+          (click)="removeFromWatchlist(element.symbol)"
+        >
           Remove
         </button>
-
       </td>
     </ng-container>
 

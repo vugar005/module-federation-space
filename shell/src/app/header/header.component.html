@@ -1,3 +1,30 @@
 <div class="header mat-primary">
   <h3>Shell app v.{{ version }}</h3>
+
+  <div
+    class="header-cart"
+    [matMenuTriggerFor]="cartMenu"
+    [matBadge]="cartItems?.length"
+    [matBadgeHidden]="!cartItems?.length"
+    matBadgeColor="accent"
+  >
+    <mat-icon>shopping_cart</mat-icon>
+  </div>
 </div>
+
+<mat-menu #cartMenu="matMenu">
+  <ng-container *ngIf="cartItems?.length; else emptyCart">
+    <button mat-menu-item *ngFor="let item of cartItems" (click)="onRemoveFromCart(item)">
+      <div>{{ item.symbol }}: {{ item.count }}</div>
+    </button>
+  </ng-container>
+</mat-menu>
+
+<ng-template #emptyCart>
+  <div class="empty-cart">
+    <div>
+      No items. <br />
+      Please buy items from MFE-1
+    </div>
+  </div>
+</ng-template>

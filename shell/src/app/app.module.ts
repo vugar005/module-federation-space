@@ -5,9 +5,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
+import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
-import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatMenuModule } from '@angular/material/menu';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
@@ -33,6 +36,9 @@ import { Mfe1WrapperComponent } from './mfe1-wrapper/mfe1-wrapper.component';
     MatButtonModule,
     MatListModule,
     MatTableModule,
+    MatIconModule,
+    MatBadgeModule,
+    MatMenuModule,
     StoreModule.forRoot(ROOT_REDUCERS, {
       runtimeChecks: {
         // strictStateImmutability and strictActionImmutability are enabled by default

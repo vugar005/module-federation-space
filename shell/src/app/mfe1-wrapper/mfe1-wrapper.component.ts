@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable, Subject, takeUntil } from 'rxjs';
+import { fromEvent, Observable, Subject, takeUntil } from 'rxjs';
 import { registry } from '../registry';
 import { selectPortfolioWatchlist } from '../reducers';
+import { CartActions } from 'core/actions';
 
 @Component({
   selector: 'shell-mfe1-wrapper',
@@ -20,6 +21,7 @@ export class Mfe1WrapperComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     this.getWatchList();
     this.loadElement();
+    this.initListeners();
   }
 
   public ngOnDestroy(): void {
@@ -43,5 +45,15 @@ export class Mfe1WrapperComponent implements OnInit, OnDestroy {
 
   private getWatchList(): void {
     this.watchList$ = this.store.select(selectPortfolioWatchlist).pipe(takeUntil(this.onDestroy$));
+  }
+
+  private initListeners(): void {
+    fromEvent(window, 'MFE1:BUY ITEM')
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((event: any) => this.onBuyItem(event));
+  }
+
+  private onBuyItem(event: CustomEvent): void {
+    this.store.dispatch(CartActions.addToCart({ payload: event.detail }));
   }
 }

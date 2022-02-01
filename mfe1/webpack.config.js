@@ -32,6 +32,7 @@ module.exports = {
            // Material
           "@angular/cdk": {requiredVersion: '13.1.3' },
           "@angular/material/table": {requiredVersion: '13.1.3' },
+          "@angular/material/button": {requiredVersion: '13.1.3' },
     },
   })
   ],

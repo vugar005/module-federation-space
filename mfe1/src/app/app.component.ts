@@ -29,11 +29,11 @@ export class AppComponent implements OnInit, OnChanges {
   }
 
   public ngOnChanges(changes: SimpleChanges): void {
-    const watchlistData =
-      changes && changes['watchlist'] && changes['watchlist']?.currentValue;
-    if (watchlistData) {
-      console.log('MFE1 watchlist', changes);
-      const data = watchlistData.split(',');
+    const watchlistChange = changes && changes['watchlist'];
+    console.log('watchlist', watchlistChange?.currentValue);
+    if (watchlistChange) {
+      const watchlistData = watchlistChange.currentValue;
+      const data = watchlistData ? watchlistData.split(',') : [];
       this.store.dispatch(UIActions.setUIWatchlist({ payload: data }));
     }
   }

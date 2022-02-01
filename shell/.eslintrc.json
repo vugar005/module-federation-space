@@ -226,7 +226,10 @@
       ],
       "extends": [
         "plugin:ngrx/recommended"
-      ]
+      ],
+      "rules": {
+        "ngrx/no-typed-global-store": "off"
+      }
     }
   ]
 }

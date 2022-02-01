@@ -1,2 +1,3 @@
 import * as PortfolioActions from './portfolio.actions';
-export { PortfolioActions };
+import * as CartActions from './cart.actions';
+export { PortfolioActions, CartActions };
