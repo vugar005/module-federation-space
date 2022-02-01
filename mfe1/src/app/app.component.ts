@@ -20,7 +20,7 @@ import { UIActions } from './core/actions';
 export class AppComponent implements OnInit, OnChanges {
   @Input() watchlist?: string[];
   public title = 'mfe1';
-  public readonly version = VERSION.major;
+  public readonly version = VERSION.full;
 
   constructor(private router: Router, private store: Store) {}
 

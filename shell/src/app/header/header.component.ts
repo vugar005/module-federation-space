@@ -12,7 +12,7 @@ import { AppState, selectCartItems } from '../reducers';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  public readonly version = VERSION.major;
+  public readonly version = VERSION.full;
   public cartItems?: CartItem[];
   private readonly onDestroy$ = new Subject<void>();
 
