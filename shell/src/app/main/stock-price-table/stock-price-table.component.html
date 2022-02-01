@@ -58,11 +58,23 @@
         <button
           class="td-watchlist-btn"
           mat-raised-button
-          [disabled]="watchlist?.includes(element?.symbol)"
+          color="accent"
+          *ngIf="!watchlist?.includes(element?.symbol)"
           (click)="onAddToWatchlist(element.symbol)"
         >
           Add To Watchlist
         </button>
+
+        <button
+          class="td-watchlist-btn"
+          mat-stroked-button
+          color="warn"
+         *ngIf="watchlist?.includes(element?.symbol)"
+         (click)="removeFromWatchlist(element.symbol)"
+         >
+          Remove
+        </button>
+
       </td>
     </ng-container>
 

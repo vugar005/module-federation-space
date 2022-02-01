@@ -36,6 +36,10 @@ export class StockPriceTableComponent implements OnInit, OnDestroy {
     this.store.dispatch(PortfolioActions.addToWatchList({ payload: symbol }));
   }
 
+  public removeFromWatchlist(symbol: string): void {
+    this.store.dispatch(PortfolioActions.removeFromWatchlist({ payload: symbol }));
+  }
+
   private initGrid(): void {
     this.initPollingStockData();
   }

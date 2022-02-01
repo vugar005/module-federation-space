@@ -21,6 +21,10 @@ export const reducer = createReducer(
           action.payload
       ]
   })),
+  on(PortfolioActions.removeFromWatchlist, (state, action) => ({
+    ...state,
+    watchList: state.watchList.filter(item => item !== action.payload)
+})),
 );
 
 export const selectWatchlist = (state: State) => state.watchList;
