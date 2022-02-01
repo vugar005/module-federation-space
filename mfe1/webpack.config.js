@@ -21,11 +21,11 @@ module.exports = {
         },
         shared: {
           // Angular
-          "@angular/core": {requiredVersion: '13.1.3' },
-          "@angular/common": {requiredVersion: '13.1.3' },
-          "@angular/common/http": {requiredVersion: '13.1.3' },
-          "@angular/router": {requiredVersion: '13.1.3' },
-          "@angular/platform-browser/animations": {requiredVersion: '13.1.3' },
+          "@angular/core": {requiredVersion: '13.2.0' },
+          "@angular/common": {requiredVersion: '13.2.0' },
+          "@angular/common/http": {requiredVersion: '13.2.0' },
+          "@angular/router": {requiredVersion: '13.2.0' },
+          "@angular/platform-browser/animations": {requiredVersion: '13.2.0' },
           // RxJs
            "rxjs": { requiredVersion: '7.4.0' },
            "rxjs/operators": { requiredVersion: '7.4.0' },
