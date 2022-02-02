@@ -22,6 +22,7 @@ module.exports = {
           "@angular/common": { requiredVersion: '13.2.0' },
           "@angular/common/http": { requiredVersion: '13.2.0' },
           "@angular/router": { requiredVersion: '13.2.0' },
+          "@angular/platform-browser": {requiredVersion: '13.2.0' },
           "@angular/platform-browser/animations": {requiredVersion: '13.2.0' },
           // RxJs
           "rxjs": { requiredVersion: '7.4.0' },
